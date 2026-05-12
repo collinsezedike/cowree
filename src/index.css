@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-forest-900 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl
+      bg-forest-800 text-cream font-semibold text-sm
+      hover:bg-forest-700 active:bg-forest-900
+      transition-all duration-200 shadow-card hover:shadow-card-hover
+      disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-forest-800;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl
+      bg-gold-500 text-forest-900 font-semibold text-sm
+      hover:bg-gold-400 active:bg-gold-600
+      transition-all duration-200 shadow-gold
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl
+      border-2 border-forest-800 text-forest-800 font-semibold text-sm
+      hover:bg-forest-800 hover:text-cream
+      transition-all duration-200
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg
+      text-forest-700 font-medium text-sm
+      hover:bg-forest-50 hover:text-forest-900
+      transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card p-6;
+  }
+
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-card p-6 border border-white/60;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-forest-200 bg-white
+      text-forest-900 placeholder:text-forest-400 text-sm
+      focus:outline-none focus:ring-2 focus:ring-forest-800/20 focus:border-forest-800
+      transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-xs font-semibold text-forest-700 uppercase tracking-wide mb-1.5;
+  }
+
+  .badge-green {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full
+      bg-forest-100 text-forest-800 text-xs font-semibold;
+  }
+
+  .badge-gold {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full
+      bg-gold-100 text-gold-700 text-xs font-semibold;
+  }
+
+  .badge-pending {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full
+      bg-amber-100 text-amber-700 text-xs font-semibold;
+  }
+
+  .badge-error {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full
+      bg-red-100 text-red-700 text-xs font-semibold;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f0f7f3; }
+::-webkit-scrollbar-thumb { background: #3d8566; border-radius: 3px; }
