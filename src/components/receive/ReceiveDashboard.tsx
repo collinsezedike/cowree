@@ -1,6 +1,6 @@
 import { useWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { Copy, CheckCircle, ExternalLink, RefreshCw } from "lucide-react";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
+import { Copy, CheckCircle, ExternalLink, RefreshCw, Wallet } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { StatusBadge } from "@/components/ui/StatusBadge";
@@ -9,6 +9,7 @@ import { CowrieLogo } from "@/components/ui/CowrieLogo";
 
 export function ReceiveDashboard() {
   const { connected, publicKey } = useWallet();
+  const { setVisible } = useWalletModal();
   const [copied, setCopied] = useState(false);
   const { transactions, refresh } = useTransactionHistory();
 
@@ -32,17 +33,20 @@ export function ReceiveDashboard() {
           className="text-2xl font-bold text-forest-900 mb-2"
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         >
-          Connect your Solana wallet
+          Receive USDC on Solana
         </h2>
         <p className="text-forest-500 text-sm mb-6 max-w-xs mx-auto">
-          Connect Phantom or Backpack to see your incoming USDC transfers from
-          any chain, powered by Cowree.
+          Connect your Solana wallet to see incoming transfers from any chain,
+          routed by Cowree.
         </p>
         <div className="flex justify-center">
-          <WalletMultiButton />
+          <button type="button" onClick={() => setVisible(true)} className="btn-gold">
+            <Wallet size={16} />
+            Connect wallet
+          </button>
         </div>
         <p className="mt-4 text-xs text-forest-400">
-          No account needed · Just a Solana wallet
+          No sign-up required
         </p>
       </div>
     );
