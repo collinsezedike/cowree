@@ -128,9 +128,3 @@ For over 5,000 years, cowrie shells (*Cypraea moneta*) were used as currency acr
 - **Universal** — recognised across language and cultural barriers
 
 The cowrie was the original cross-border payment rail. Cowree is the modern version: same philosophy, blockchain-native infrastructure.
-
----
-
-## Built for the KIRAPAY Superteam Bounty
-
-This project was built for the [Build with KIRAPAY](https://superteam.fun/earn/listing/build-with-kirapay) bounty on Superteam Earn. KIRAPAY is the core enabling technology — every transfer flows through their API.
