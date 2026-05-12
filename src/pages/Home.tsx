@@ -62,7 +62,7 @@ export function Home() {
       <section className="relative min-h-[90vh] flex items-center">
         <div
           aria-hidden
-          className="absolute inset-0 opacity-5 pointer-events-none"
+          className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
             backgroundImage: `radial-gradient(circle at 25% 25%, #1B4332 0%, transparent 50%),
                               radial-gradient(circle at 75% 75%, #D4A017 0%, transparent 50%)`,
@@ -108,13 +108,64 @@ export function Home() {
               </p>
             </div>
 
+            {/* Hero visual */}
             <div className="hidden md:flex justify-center items-center">
-              <div
-                className="relative"
-                style={{ animation: "float 8s ease-in-out infinite" }}
-              >
-                <CowrieLogo size={240} />
-                <div className="absolute -inset-8 rounded-full bg-gold-500/10 blur-3xl" />
+              <div className="relative w-[420px] h-[420px]">
+
+                {/* Ambient glow */}
+                <div className="absolute inset-0 rounded-full bg-gold-400/10 blur-3xl" />
+                <div className="absolute inset-8 rounded-full bg-forest-800/10 blur-2xl" />
+
+                {/* Orbit rings */}
+                <div className="absolute inset-6 rounded-full border border-forest-200/40 border-dashed" />
+                <div className="absolute inset-16 rounded-full border border-gold-300/30" />
+
+                {/* Central cowrie shell */}
+                <div
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{ animation: "float 7s ease-in-out infinite" }}
+                >
+                  <CowrieLogo size={200} />
+                </div>
+
+                {/* Chain badges — kept well inside container bounds */}
+                {[
+                  { src: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png",  label: "ETH",  top: "6%",  left: "58%", delay: "0s",   dur: "6s"   },
+                  { src: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/polygon/info/logo.png",   label: "POL",  top: "28%", left: "84%", delay: "0.8s", dur: "7s"   },
+                  { src: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/info/logo.png",  label: "ARB",  top: "68%", left: "80%", delay: "1.4s", dur: "5.5s" },
+                  { src: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/base/info/logo.png",         label: "BASE", top: "14%", left: "18%", delay: "0.4s", dur: "6.5s" },
+                  { src: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/avalanchec/info/logo.png",   label: "AVAX", top: "43%", left: "10%", delay: "1.6s", dur: "6s"   },
+                  { src: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/optimism/info/logo.png",     label: "OP",   top: "72%", left: "18%", delay: "1.1s", dur: "7.5s" },
+                ].map(({ src, label, top, left, delay, dur }) => (
+                  <div
+                    key={label}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 whitespace-nowrap bg-white rounded-full pl-1 pr-3 py-1 shadow-card text-xs font-semibold text-forest-800"
+                    style={{ top, left, animation: `float ${dur} ease-in-out infinite`, animationDelay: delay }}
+                  >
+                    <img src={src} alt={label} className="w-5 h-5 rounded-full shrink-0" />
+                    {label}
+                  </div>
+                ))}
+
+                {/* Recipient badge */}
+                <div
+                  className="absolute bottom-[4%] left-1/2 -translate-x-1/2 whitespace-nowrap flex items-center gap-2 bg-forest-900 text-cream rounded-xl px-3 py-2 shadow-card text-xs font-semibold"
+                  style={{ animation: "float 7s ease-in-out infinite", animationDelay: "1.5s" }}
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/solana/info/logo.png"
+                    alt="Solana"
+                    className="w-4 h-4 rounded-full shrink-0"
+                  />
+                  <img
+                    src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png"
+                    alt="USDC"
+                    className="w-4 h-4 rounded-full shrink-0 -ml-1"
+                  />
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse shrink-0" />
+                  USDC on Solana ✓
+                </div>
+
               </div>
             </div>
           </div>
