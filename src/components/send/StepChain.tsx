@@ -1,6 +1,6 @@
 import { SendFormData, SupportedChain, SupportedToken } from "@/types";
 import { SUPPORTED_CHAINS } from "@/lib/demo/demoData";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 interface Props {
@@ -42,28 +42,25 @@ export function StepChain({ form, onChange, onNext }: Props) {
       {/* Source chain */}
       <div className="mb-5">
         <label className="label">Source chain</label>
-        <div className="relative">
-          <select
-            value={form.senderChain}
-            onChange={(e) => {
-              const chain = SUPPORTED_CHAINS.find((c) => c.id === e.target.value);
-              onChange({
-                senderChain: e.target.value as SupportedChain,
-                senderToken: chain?.tokens[0] as SupportedToken ?? "USDC",
-              });
-            }}
-            className="input-field appearance-none pr-10"
-          >
-            {SUPPORTED_CHAINS.map((chain) => (
-              <option key={chain.id} value={chain.id}>
-                {chain.icon} {chain.name}
-              </option>
-            ))}
-          </select>
-          <ChevronDown
-            size={16}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-forest-400 pointer-events-none"
-          />
+        <div className="grid grid-cols-5 gap-2">
+          {SUPPORTED_CHAINS.map((chain) => (
+            <button
+              key={chain.id}
+              type="button"
+              onClick={() => onChange({
+                senderChain: chain.id as SupportedChain,
+                senderToken: chain.tokens[0] as SupportedToken,
+              })}
+              className={`flex flex-col items-center gap-1.5 py-3 rounded-xl border-2 text-xs font-medium transition-all
+                ${form.senderChain === chain.id
+                  ? "border-forest-800 bg-forest-50"
+                  : "border-forest-100 bg-white hover:border-forest-300"
+                }`}
+            >
+              <img src={chain.logo} alt={chain.name} className="w-7 h-7 rounded-full" />
+              <span className="text-forest-700 leading-none">{chain.name.split(" ")[0]}</span>
+            </button>
+          ))}
         </div>
       </div>
 
@@ -112,19 +109,8 @@ export function StepChain({ form, onChange, onNext }: Props) {
           <p className="text-red-500 text-xs mt-1.5">{amountError}</p>
         )}
         <p className="text-xs text-forest-400 mt-1.5">
-          Recipient receives USDC on Solana · KIRAPAY fee ~1.5%
+          Recipient receives USDC on Solana · Transfer fee ~1.5%
         </p>
-      </div>
-
-      {/* Destination info */}
-      <div className="p-3 rounded-xl bg-forest-50 border border-forest-100 mb-6 flex items-center gap-3">
-        <div className="w-8 h-8 rounded-full bg-forest-800 flex items-center justify-center text-xs font-bold text-cream shrink-0">
-          SOL
-        </div>
-        <div>
-          <p className="text-xs font-semibold text-forest-900">Destination: Solana USDC</p>
-          <p className="text-xs text-forest-500">Settled by KIRAPAY cross-chain routing</p>
-        </div>
       </div>
 
       <button type="button" onClick={validateAndNext} className="btn-gold w-full">

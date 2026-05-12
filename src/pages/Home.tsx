@@ -15,8 +15,8 @@ const HOW_IT_WORKS = [
   },
   {
     step: "03",
-    title: "KIRAPAY routes the transfer",
-    body: "KIRAPAY handles all cross-chain settlement invisibly — no bridges, no friction.",
+    title: "Cowree routes the transfer",
+    body: "Cowree handles all cross-chain settlement invisibly — no bridges, no friction.",
   },
   {
     step: "04",
@@ -29,7 +29,7 @@ const FEATURES = [
   {
     icon: <Zap className="text-gold-500" size={24} />,
     title: "One transaction",
-    body: "No manual bridging. No DEX hunting. Just send — KIRAPAY handles the rest.",
+    body: "No manual bridging. No DEX hunting. Just send — Cowree handles the rest.",
   },
   {
     icon: <Globe className="text-gold-500" size={24} />,
@@ -39,7 +39,7 @@ const FEATURES = [
   {
     icon: <Shield className="text-gold-500" size={24} />,
     title: "Secure & non-custodial",
-    body: "Your keys, your funds. KIRAPAY facilitates; you always stay in control.",
+    body: "Your keys, your funds. Cowree facilitates; you always stay in control.",
   },
   {
     icon: <Clock className="text-gold-500" size={24} />,
@@ -74,7 +74,7 @@ export function Home() {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest-100 text-forest-800 text-xs font-semibold mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse" />
-                Powered by KIRAPAY
+                Cross-chain remittance
               </div>
 
               <h1
@@ -89,7 +89,7 @@ export function Home() {
               </h1>
 
               <p className="text-xl text-forest-600 leading-relaxed mb-8">
-                Send from any chain. Receive USDC on Solana. KIRAPAY handles all
+                Send from any chain. Receive USDC on Solana. Cowree handles all
                 cross-chain settlement — seamlessly, in one transaction.
               </p>
 
@@ -194,7 +194,7 @@ export function Home() {
             How Cowree works
           </h2>
           <p className="text-forest-600 text-lg max-w-xl mx-auto">
-            Four steps. One transaction. Powered entirely by KIRAPAY.
+            Four steps. One transaction. No bridges, no friction.
           </p>
         </div>
 
@@ -279,7 +279,7 @@ export function Home() {
           Ready to send?
         </h2>
         <p className="text-forest-600 text-lg mb-8">
-          Connect your wallet, paste a Solana address, and let KIRAPAY do the rest.
+          Connect your wallet, paste a Solana address, and let Cowree do the rest.
         </p>
         <Link to="/send" className="btn-gold text-base px-10 py-4">
           Start a transfer

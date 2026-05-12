@@ -24,7 +24,7 @@ export function DemoWalkthrough() {
             <p className="font-semibold text-lg mb-1">Demo: ETH → Solana USDC</p>
             <p className="text-cream/70 text-sm leading-relaxed">
               Watch a simulated cross-chain transfer from Ethereum to Solana USDC
-              via KIRAPAY. This is what a real transfer looks like.
+              via Cowree. This is what a real transfer looks like.
             </p>
           </div>
         </div>
@@ -55,8 +55,8 @@ export function DemoWalkthrough() {
           </div>
           <ArrowRight size={14} className="text-forest-400 shrink-0" />
           <div className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-gold-50 border border-gold-200">
-            <div className="w-4 h-4 rounded-full bg-gold-500 text-white flex items-center justify-center text-xs font-bold">K</div>
-            <span className="text-xs font-semibold text-gold-800">KIRAPAY</span>
+            <div className="w-4 h-4 rounded-full bg-gold-500 text-white flex items-center justify-center text-xs font-bold">C</div>
+            <span className="text-xs font-semibold text-gold-800">Cowree</span>
           </div>
           <ArrowRight size={14} className="text-forest-400 shrink-0" />
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-purple-50 border border-purple-200">
@@ -65,7 +65,7 @@ export function DemoWalkthrough() {
           </div>
         </div>
         <p className="text-xs text-forest-400 mt-3">
-          KIRAPAY routes the transfer cross-chain, handling all settlement invisibly.
+          Cowree routes the transfer cross-chain, handling all settlement invisibly.
           The recipient&apos;s Solana wallet receives native USDC.
         </p>
       </div>

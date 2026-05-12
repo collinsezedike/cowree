@@ -22,7 +22,7 @@ export function History() {
               Transaction history
             </h1>
             <p className="text-forest-500 text-sm mt-0.5">
-              All your cross-chain transfers via KIRAPAY
+              All your cross-chain transfers
             </p>
           </div>
           <button type="button" onClick={refresh} className="btn-ghost">
@@ -51,7 +51,7 @@ export function History() {
             <CowrieLogo size={48} className="mx-auto mb-4" />
             <p className="font-semibold text-forest-700 mb-2">No transfers yet</p>
             <p className="text-xs text-forest-400 mb-6">
-              Send your first cross-chain transfer via KIRAPAY
+              Send your first cross-chain transfer
             </p>
             <Link to="/send" className="btn-gold">
               <Send size={14} />

@@ -116,13 +116,13 @@ export function StatusTracker({ txnId, isDemo = false }: Props) {
       {status === "completed" && (
         <div className="mt-2 p-3 rounded-xl bg-forest-50 border border-forest-200 text-center">
           <p className="text-sm font-semibold text-forest-900">Transfer complete</p>
-          <p className="text-xs text-forest-500 mt-0.5">USDC delivered on Solana via KIRAPAY</p>
+          <p className="text-xs text-forest-500 mt-0.5">USDC delivered on Solana</p>
         </div>
       )}
 
       {isDemo && (
         <p className="text-center text-xs text-forest-400 mt-4">
-          Demo simulation · Powered by KIRAPAY
+          Demo simulation · Powered by Cowree
         </p>
       )}
     </div>

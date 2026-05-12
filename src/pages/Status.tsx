@@ -19,8 +19,8 @@ export function Status() {
           </h1>
           <p className="text-forest-500 text-sm mt-1">
             {isDemo && !txnId
-              ? "Watching a demo transfer via KIRAPAY"
-              : `KIRAPAY ID: ${txnId}`}
+              ? "Watching a demo transfer"
+              : `Transfer ID: ${txnId}`}
           </p>
         </div>
 

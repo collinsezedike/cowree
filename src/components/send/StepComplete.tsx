@@ -22,7 +22,7 @@ export function StepComplete({ form, onNewTransfer }: Props) {
         Transfer initiated!
       </h2>
       <p className="text-sm text-forest-500 mb-6 max-w-xs mx-auto">
-        KIRAPAY is routing your payment cross-chain. The recipient&apos;s Solana
+        Cowree is routing your transfer cross-chain. The recipient&apos;s Solana
         wallet will receive USDC shortly.
       </p>
 
@@ -32,7 +32,7 @@ export function StepComplete({ form, onNewTransfer }: Props) {
           <div className="flex justify-between">
             <span className="text-forest-600">From</span>
             <span className="font-semibold text-forest-900">
-              {chain?.icon} ${amount.toFixed(2)} {form.senderToken} on {chain?.name}
+              ${amount.toFixed(2)} {form.senderToken} on {chain?.name}
             </span>
           </div>
           <div className="flex justify-between">
@@ -47,7 +47,7 @@ export function StepComplete({ form, onNewTransfer }: Props) {
           </div>
           <div className="flex justify-between">
             <span className="text-forest-600">Via</span>
-            <span className="font-semibold text-gold-600">KIRAPAY</span>
+            <span className="font-semibold text-gold-600">Cowree</span>
           </div>
         </div>
       </div>

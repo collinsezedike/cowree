@@ -36,7 +36,7 @@ export function ReceiveDashboard() {
         </h2>
         <p className="text-forest-500 text-sm mb-6 max-w-xs mx-auto">
           Connect Phantom or Backpack to see your incoming USDC transfers from
-          any chain, powered by KIRAPAY.
+          any chain, powered by Cowree.
         </p>
         <div className="flex justify-center">
           <WalletMultiButton />
@@ -70,7 +70,7 @@ export function ReceiveDashboard() {
         <div className="p-3 rounded-xl bg-forest-50 border border-forest-100">
           <p className="text-xs text-forest-600">
             Share this address with anyone sending you money via Cowree. They&apos;ll
-            send from any chain — KIRAPAY delivers USDC directly here.
+            send from any chain — Cowree delivers USDC directly here.
           </p>
         </div>
       </div>
@@ -91,7 +91,7 @@ export function ReceiveDashboard() {
           </div>
           <p className="font-medium text-forest-700 mb-1">No incoming transfers yet</p>
           <p className="text-xs text-forest-400">
-            Share your address to start receiving USDC via KIRAPAY
+            Share your address to start receiving USDC
           </p>
         </div>
       ) : (
@@ -111,7 +111,7 @@ export function ReceiveDashboard() {
               </div>
               {txn.kirapayTxnId && (
                 <div className="flex items-center gap-1 text-xs text-forest-400">
-                  <span>KIRAPAY ID: {txn.kirapayTxnId}</span>
+                  <span>Transfer ID: {txn.kirapayTxnId}</span>
                   {txn.paymentLinkUrl && txn.paymentLinkUrl !== "#demo" && (
                     <a
                       href={txn.paymentLinkUrl}

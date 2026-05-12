@@ -15,7 +15,7 @@ export function Send() {
             Send money cross-chain
           </h1>
           <p className="text-forest-500 text-sm mt-1">
-            From any chain · USDC on Solana · via KIRAPAY
+            From any chain · USDC on Solana · in minutes
           </p>
         </div>
 

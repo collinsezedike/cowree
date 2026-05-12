@@ -16,7 +16,7 @@ export function DemoModeBanner() {
       <div className="flex-1">
         <p className="text-xs text-amber-800 font-semibold mb-0.5">Demo mode</p>
         <p className="text-xs text-amber-700 leading-relaxed">
-          Running without a live KIRAPAY key — payments won&apos;t process.{" "}
+          Running without a live API key — payments won&apos;t process.{" "}
           <Link to="/demo" className="underline font-medium">
             Watch a demo simulation instead →
           </Link>

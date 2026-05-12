@@ -89,7 +89,7 @@ export function StepRecipient({ form, onChange, onBack, onNext }: Props) {
         <Info size={14} className="text-gold-600 shrink-0 mt-0.5" />
         <p className="text-xs text-gold-800 leading-relaxed">
           The recipient only needs a Solana wallet. No app or account setup required —
-          KIRAPAY delivers USDC directly to their address.
+          Cowree delivers USDC directly to their address.
         </p>
       </div>
 

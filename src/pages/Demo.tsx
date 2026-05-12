@@ -14,7 +14,7 @@ export function Demo() {
             Demo walkthrough
           </h1>
           <p className="text-forest-500 text-sm mt-1 max-w-sm mx-auto">
-            Simulated ETH → Solana USDC transfer via KIRAPAY. No testnet required.
+            Simulated ETH → Solana USDC transfer via Cowree. No testnet required.
           </p>
         </div>
 

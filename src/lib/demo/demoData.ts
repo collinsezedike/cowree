@@ -21,7 +21,7 @@ export const DEMO_STEPS: Array<{
   {
     status: "routing",
     label: "Cross-chain routing",
-    description: "KIRAPAY is bridging ETH → USDC across chains",
+    description: "Cowree is bridging ETH → USDC across chains",
     delay: 5000,
   },
   {
@@ -86,10 +86,14 @@ export const DEMO_HISTORY: Transaction[] = [
   },
 ];
 
+const TW = "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains";
+
 export const SUPPORTED_CHAINS = [
-  { id: "ethereum", name: "Ethereum", icon: "⟠", isEVM: true, tokens: ["ETH", "USDC", "USDT"], chainId: 1 },
-  { id: "polygon", name: "Polygon", icon: "⬡", isEVM: true, tokens: ["USDC", "USDT", "MATIC"], chainId: 137 },
-  { id: "arbitrum", name: "Arbitrum", icon: "◈", isEVM: true, tokens: ["ETH", "USDC"], chainId: 42161 },
-  { id: "optimism", name: "Optimism", icon: "◎", isEVM: true, tokens: ["ETH", "USDC"], chainId: 10 },
-  { id: "base", name: "Base", icon: "⬤", isEVM: true, tokens: ["ETH", "USDC"], chainId: 8453 },
+  { id: "ethereum", name: "Ethereum", logo: `${TW}/ethereum/info/logo.png`,  isEVM: true, tokens: ["ETH", "USDC", "USDT"], chainId: 1     },
+  { id: "polygon",  name: "Polygon",  logo: `${TW}/polygon/info/logo.png`,   isEVM: true, tokens: ["USDC", "USDT", "POL"],  chainId: 137   },
+  { id: "arbitrum", name: "Arbitrum", logo: `${TW}/arbitrum/info/logo.png`,   isEVM: true, tokens: ["ETH", "USDC"],          chainId: 42161 },
+  { id: "optimism", name: "Optimism", logo: `${TW}/optimism/info/logo.png`,   isEVM: true, tokens: ["ETH", "USDC"],          chainId: 10    },
+  { id: "base",     name: "Base",     logo: `${TW}/base/info/logo.png`,       isEVM: true, tokens: ["ETH", "USDC"],          chainId: 8453  },
 ] as const;
+
+export const SOLANA_LOGO = `${TW}/solana/info/logo.png`;

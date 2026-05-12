@@ -21,10 +21,11 @@ export function TransactionCard({ txn }: Props) {
     <div className="card hover:shadow-card-hover transition-all">
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
-          {/* Chain icon */}
-          <div className="w-9 h-9 rounded-full bg-forest-100 flex items-center justify-center text-base shrink-0">
-            {chain?.icon ?? "⟠"}
-          </div>
+          <img
+            src={chain?.logo ?? "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png"}
+            alt={chain?.name ?? "Ethereum"}
+            className="w-9 h-9 rounded-full shrink-0"
+          />
           <div>
             <p className="font-semibold text-forest-900 text-sm">
               {txn.recipientName
