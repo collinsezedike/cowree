@@ -1,7 +1,7 @@
 import { SendFormData } from "@/types";
 import { SUPPORTED_CHAINS, SOLANA_LOGO } from "@/lib/demo/demoData";
 import { SOLANA_USDC_MINT } from "@/lib/kirapay/constants";
-import { KirapayButton } from "./KirapayButton";
+import { CheckoutButton } from "./CheckoutButton";
 import { ArrowLeft, ArrowDown, Info } from "lucide-react";
 
 interface Props {
@@ -95,7 +95,7 @@ export function StepReview({ form, onBack }: Props) {
 
       {/* KIRAPAY payment button */}
       <div className="mb-4">
-        <KirapayButton
+        <CheckoutButton
           config={{
             price: amount,
             name: `Cowree transfer${form.recipientName ? ` to ${form.recipientName}` : ""}`,

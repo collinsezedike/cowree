@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-export function KirapayButton({ config, className }: Props) {
+export function CheckoutButton({ config, className }: Props) {
   const [loading, setLoading] = useState(false);
   const [checkoutUrl, setCheckoutUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -45,7 +45,7 @@ export function KirapayButton({ config, className }: Props) {
             Creating payment link…
           </>
         ) : (
-          "Pay with KIRAPAY"
+          "Complete payment"
         )}
       </button>
 
@@ -66,7 +66,7 @@ export function KirapayButton({ config, className }: Props) {
             </button>
             <iframe
               src={checkoutUrl}
-              title="KIRAPAY Checkout"
+              title="Cowree Checkout"
               className="w-full h-[600px] border-0"
               allow="payment"
             />
