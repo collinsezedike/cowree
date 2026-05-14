@@ -23,7 +23,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (err instanceof KirapayError) {
       return res.status(err.status).json({ error: err.message });
     }
-    console.error("[/api/kirapay/create-link]", err);
-    return res.status(500).json({ error: "Internal server error" });
+    const message = err instanceof Error ? err.message : "Internal server error";
+    console.error("[/api/kirapay/create-link]", message);
+    return res.status(500).json({ error: message });
   }
 }
