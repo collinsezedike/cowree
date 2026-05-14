@@ -23,13 +23,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(500).json({ error: "Payment service is not configured" });
     }
 
+    // KIRAPAY API uses `originalPrice`; our client sends `price`
+    const { price, ...rest } = body;
     const upstream = await fetch(KIRAPAY_API, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "x-api-key": apiKey,
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify({ ...rest, originalPrice: price }),
     });
 
     const text = await upstream.text();
