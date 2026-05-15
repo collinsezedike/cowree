@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Loader2, X } from "lucide-react";
+import { Loader2, ExternalLink } from "lucide-react";
 import { KirapayLinkConfig } from "@/lib/kirapay/types";
 
 interface Props {
@@ -9,7 +9,6 @@ interface Props {
 
 export function CheckoutButton({ config, className }: Props) {
   const [loading, setLoading] = useState(false);
-  const [checkoutUrl, setCheckoutUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   async function openCheckout() {
@@ -23,7 +22,7 @@ export function CheckoutButton({ config, className }: Props) {
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Failed to create payment link");
-      setCheckoutUrl(json.data.url);
+      window.open(json.data.url, "_blank", "noopener,noreferrer");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
@@ -45,33 +44,15 @@ export function CheckoutButton({ config, className }: Props) {
             Creating payment link…
           </>
         ) : (
-          "Complete payment"
+          <>
+            Complete payment
+            <ExternalLink size={14} />
+          </>
         )}
       </button>
 
       {error && (
         <p className="mt-2 text-xs text-red-600 text-center">{error}</p>
-      )}
-
-      {checkoutUrl && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
-            <button
-              type="button"
-              onClick={() => setCheckoutUrl(null)}
-              className="absolute top-3 right-3 z-10 p-1.5 rounded-full bg-white/80 hover:bg-white text-forest-700 shadow"
-              aria-label="Close checkout"
-            >
-              <X size={16} />
-            </button>
-            <iframe
-              src={checkoutUrl}
-              title="Cowree Checkout"
-              className="w-full h-[600px] border-0"
-              allow="payment"
-            />
-          </div>
-        </div>
       )}
     </>
   );
