@@ -11,7 +11,14 @@ export function ReceiveDashboard() {
   const { connected, publicKey } = useWallet();
   const { setVisible } = useWalletModal();
   const [copied, setCopied] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const { transactions, refresh } = useTransactionHistory();
+
+  const handleRefresh = () => {
+    setRefreshing(true);
+    refresh();
+    setTimeout(() => setRefreshing(false), 600);
+  };
 
   const address = publicKey?.toBase58() ?? "";
   const incomingTxns = transactions.filter(
@@ -82,8 +89,8 @@ export function ReceiveDashboard() {
       {/* Incoming transfers */}
       <div className="flex items-center justify-between mb-4">
         <h3 className="font-semibold text-forest-900">Incoming transfers</h3>
-        <button type="button" onClick={refresh} className="btn-ghost py-1.5">
-          <RefreshCw size={14} />
+        <button type="button" onClick={handleRefresh} disabled={refreshing} className="btn-ghost py-1.5">
+          <RefreshCw size={14} className={refreshing ? "animate-spin" : ""} />
           Refresh
         </button>
       </div>

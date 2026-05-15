@@ -3,12 +3,20 @@ import { useTransactionHistory } from "@/hooks/useTransactionHistory";
 import { TransactionCard } from "@/components/transaction/TransactionCard";
 import { RefreshCw, Send } from "lucide-react";
 import { CowrieLogo } from "@/components/ui/CowrieLogo";
+import { useState } from "react";
 
 export function History() {
   const { transactions, refresh } = useTransactionHistory();
+  const [refreshing, setRefreshing] = useState(false);
 
   const total = transactions.reduce((sum, t) => sum + t.recipientAmountUsdc, 0);
   const completed = transactions.filter((t) => t.status === "completed").length;
+
+  const handleRefresh = () => {
+    setRefreshing(true);
+    refresh();
+    setTimeout(() => setRefreshing(false), 600);
+  };
 
   return (
     <div className="min-h-[calc(100vh-64px)] bg-gradient-to-b from-cream to-forest-50 py-12 px-4">
@@ -25,8 +33,8 @@ export function History() {
               All your cross-chain transfers
             </p>
           </div>
-          <button type="button" onClick={refresh} className="btn-ghost">
-            <RefreshCw size={14} />
+          <button type="button" onClick={handleRefresh} disabled={refreshing} className="btn-ghost">
+            <RefreshCw size={14} className={refreshing ? "animate-spin" : ""} />
             Refresh
           </button>
         </div>
