@@ -1,4 +1,4 @@
-import { Transaction, TransactionStatus } from "@/types";
+import { Transaction, TransactionStatus } from "@/types"; // Transaction used by DEMO_TRANSACTION
 
 export const DEMO_STEPS: Array<{
   status: TransactionStatus;
@@ -54,37 +54,6 @@ export const DEMO_TRANSACTION: Transaction = {
   completedAt: new Date(Date.now() - 86280000).toISOString(),
 };
 
-export const DEMO_HISTORY: Transaction[] = [
-  DEMO_TRANSACTION,
-  {
-    id: "demo-txn-002",
-    kirapayTxnId: "kp_demo_7e3f1a2b",
-    senderChain: "polygon",
-    senderToken: "USDC",
-    amount: 50,
-    recipientAddress: "DYw8jCTfwHNRJhhmFcbXvVDTqWMEVFBX9C1pqUqFdkPv",
-    recipientName: "Kofi Mensah",
-    recipientAmountUsdc: 49.25,
-    status: "completed",
-    createdAt: new Date(Date.now() - 172800000).toISOString(),
-    updatedAt: new Date(Date.now() - 172700000).toISOString(),
-    completedAt: new Date(Date.now() - 172680000).toISOString(),
-  },
-  {
-    id: "demo-txn-003",
-    kirapayTxnId: "kp_demo_9c5d8e1f",
-    senderChain: "ethereum",
-    senderToken: "USDC",
-    amount: 200,
-    recipientAddress: "EkFut3dZkbXkL9oTmMkAUHMa6HsFGKFu5Mk3cP4jxDNR",
-    recipientName: "Zara Diallo",
-    recipientAmountUsdc: 197.8,
-    status: "completed",
-    createdAt: new Date(Date.now() - 604800000).toISOString(),
-    updatedAt: new Date(Date.now() - 604600000).toISOString(),
-    completedAt: new Date(Date.now() - 604580000).toISOString(),
-  },
-];
 
 const TW = "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains";
 
